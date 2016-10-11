@@ -1,0 +1,8 @@
+build
+.*.swp
+*.obj
+node_modules
+npm*.log
+src/
+build/
+lib/

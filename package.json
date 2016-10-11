@@ -1,0 +1,33 @@
+{
+  "name": "callsdk",
+  "version": "1.0.7",
+  "description": "call sdk for electron",
+  "main": "./index.js",
+  "private": false,
+  "gypfile": true,
+  "author": "callsync@nomadconnection.com",
+  "os": ["darwin", "win32"],
+  "publishConfig": {
+      "registry": "http://192.168.18.20:4873"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "preinstall": "npm install node-pre-gyp",
+    "install": "node-pre-gyp install --fallback-to-build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nomadcn/node-callsdk.git"
+  },
+  "binary": {
+    "module_name": "callsdk",
+    "module_path": "./lib/binding/{configuration}/{node_abi}-{platform}-{arch}/",
+    "package_name": "{module_name}-v{version}-{node_abi}-{platform}-{arch}.tar.gz",
+    "host": "https://github.com/nomadcn/node-callsdk/releases/download/",
+    "remote_path": "{version}"
+  },
+  "dependencies": {
+    "nan": "2.x",
+    "node-pre-gyp": "0.6.x"
+  }
+}
